@@ -113,7 +113,6 @@ class SettingsModel : public QObject {
   static constexpr const char* kSplitTunnelModeExclude = "exclude";
   static constexpr const char* kSplitTunnelModeInclude = "include";
 
-  // DEPRECATED
   static constexpr const char* kBypassMethodSni = "SNI";
 
   static constexpr const char* kBypassMethodObfuscation = "OBFUSCATION";
