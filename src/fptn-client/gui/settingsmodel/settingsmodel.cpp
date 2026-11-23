@@ -365,13 +365,14 @@ void SettingsModel::Load(bool dont_load_server) {
   }
 
   /* Replace DEPRECATED METHODS */
-  if (bypass_method_ == kBypassMethodSni ||
-      bypass_method_ == kBypassMethodSniReality) {
-    bypass_method_ = kBypassMethodObfuscation;
-  }
+//  if (bypass_method_ == kBypassMethodSni ||
+//      bypass_method_ == kBypassMethodSniReality) {
+//    bypass_method_ = kBypassMethodObfuscation;
+//  }
 
   if (bypass_method_.isEmpty() ||
       (bypass_method_ != kBypassMethodObfuscation &&
+       bypass_method_ != kBypassMethodSni &&
           /* Chrome */
           bypass_method_ != kBypassMethodSniRealityChrome149 &&
           bypass_method_ != kBypassMethodSniRealityChrome148 &&
