@@ -970,6 +970,9 @@ void SettingsWidget::FillBypassMethodComboBox() {
   bypass_method_combo_box_->clear();
   bypass_method_combo_box_->addItem(
       QObject::tr("OBFUSCATION"), SettingsModel::kBypassMethodObfuscation);
+  bypass_method_combo_box_->addItem(
+      QObject::tr("SNI"), SettingsModel::kBypassMethodSni);
+  
   /* Chrome */
   bypass_method_combo_box_->addItem(QObject::tr("SNI-REALITY (Chrome 149)"),
       SettingsModel::kBypassMethodSniRealityChrome149);
@@ -1397,7 +1400,8 @@ void SettingsWidget::onAutoCustomDnsChanged(bool checked) {
 }
 void SettingsWidget::onBypassMethodChanged(const QString& method) {
   const bool is_reality_mode =
-      method != SettingsModel::kBypassMethodObfuscation;
+      method != SettingsModel::kBypassMethodObfuscation &&
+      method != SettingsModel::kBypassMethodSni;
 
   // Show/hide SNI field
   sni_label_->setVisible(is_reality_mode);
