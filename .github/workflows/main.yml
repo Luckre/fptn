@@ -7,6 +7,13 @@ on:
     tags:
       - '*'
   release:
+    workflow_dispatch:
+    inputs:
+      build_windows_x86_64:
+        description: Build the Windows x86_64 target
+        required: false
+        type: boolean
+        default: false
     types: [ published ]
 env:
   DOCKER_REGISTRY: fptnvpn
