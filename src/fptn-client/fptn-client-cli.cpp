@@ -47,6 +47,7 @@ int main(int argc, char* argv[]) {
 #endif
   try {
     const std::set<std::string> bypass_methods = {"obfuscation",
+        "sni"
         /* chrome */
         "sni-spoofing-chrome-149", "sni-spoofing-chrome-148",
         "sni-spoofing-chrome-147", "sni-spoofing-chrome-146",
@@ -361,6 +362,9 @@ int main(int argc, char* argv[]) {
         CensorshipStrategy::kSniRealityModeYandex26_4;
     if (bypass_method == "obfuscation") {
       censorship_strategy = CensorshipStrategy::kTlsObfuscator;
+    }
+    else if (bypass_method == "sni") {
+      censorship_strategy = CensorshipStrategy::kSni;
     }
     /* Chrome */
     else if (bypass_method == "sni-spoofing-chrome-149") {
